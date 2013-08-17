@@ -6,6 +6,7 @@ var buf = new Buffer(fs.readFileSync('index.html'));
 app.get('/', function(request, response) {
   response.send(buf.toString());
 });
+app.use(express.static('img/'));
 
 var port = process.env.PORT || 8080;
 app.listen(port, function() {
